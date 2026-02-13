@@ -2,7 +2,7 @@
 
 Assign short aliases for your URLs.
 
-## Install (Developer Mode)
+## Install
 
 1. Clone this repo:
    ```bash
