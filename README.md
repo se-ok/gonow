@@ -1,63 +1,45 @@
 # GoNow
 
-Fast, keyboard-driven navigation to bookmarked URLs via the Chrome omnibox.
-
-Type `` ` `` in the address bar, then a keyword to instantly jump to your saved links.
-
-## Usage
-
-1. Type `` ` `` in the address bar to activate GoNow
-2. Type a keyword — matching links appear as suggestions
-3. Press Enter to navigate
-
-**Parameterized URLs:** Save a URL with `{}` as a placeholder (e.g. `https://github.com/search?q={}`), then pass a value with `?`:
-
-```
-` gh?react
-→ https://github.com/search?q=react
-```
-
-## Managing Links
-
-Click the extension icon to open the popup where you can:
-
-- **Add** a keyword + URL pair
-- **Edit** or **Delete** existing links
-- **Sort** alphabetically
-- **Import/Export** links as JSON for backup or sharing
+Assign short aliases for your URLs.
 
 ## Install (Developer Mode)
 
-1. Clone or download this repo:
+1. Clone this repo:
    ```bash
    git clone https://github.com/nicobako/gonow.git
    ```
-2. Open your Chrome-based browser (Chrome, Edge, Brave, Arc, etc.)
-3. Navigate to the extensions page:
-   - **Chrome/Brave/Arc:** `chrome://extensions`
-   - **Edge:** `edge://extensions`
-4. Enable **Developer mode** (toggle in the top-right corner)
-5. Click **Load unpacked**
-6. Select the cloned `gonow` folder
-7. The GoNow icon should appear in your toolbar — click it to start adding links
-8. Type `` ` `` in the address bar to verify the omnibox trigger works
+2. Go to `chrome://extensions` (or `edge://extensions` for Edge)
+3. Enable **Developer mode**
+4. Click **Load unpacked** and select the `gonow` folder
 
-## Files
+## Quickstart
 
-| File | Purpose |
-|---|---|
-| `manifest.json` | Extension config (Manifest V3) |
-| `background.js` | Omnibox listener and navigation |
-| `popup.html/css/js` | Link management UI |
+1. Click the extension icon ![icon](icons/icon16.png) and add a link, e.g. keyword `docs`, URL `https://docs.google.com`
+2. Type a backtick (`` ` ``) and Space in the address bar, then your keyword:
+   ```
+   ` docs  →  opens https://docs.google.com
+   ```
+
+## Usage
+
+**Unicode keywords** — any characters except `?` (reserved for parameters) are allowed, e.g. `/` to categorize:
+```
+` work/jira  →  opens https://mycompany.atlassian.net
+```
+
+**Parameterized URLs** — use `{}` as a placeholder, pass a value with `?`:
+```
+Saved URL:  https://github.com/search?q={}
+` gh?react  →  opens https://github.com/search?q=react
+```
+
 
 ## Privacy
 
-GoNow requires two permissions:
+- **storage** — saves keyword-URL pairs via Chrome sync storage
+- **search** — falls back to default search engine for unmatched keywords
 
-- **storage** — to save your keyword-URL pairs via Chrome's sync storage
-- **search** — to fall back to your default search engine when a keyword doesn't match
-
-No data is collected or sent to any external server.
+No data is sent externally.
 
 ## Attribution
 

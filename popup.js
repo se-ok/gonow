@@ -204,7 +204,7 @@ $("#help-btn").addEventListener("click", () => {
 
 $("#github-btn").addEventListener("click", () => {
   chrome.tabs.create({
-    url: "https://github.com/nicobako/gonow",
+    url: "https://github.com/se-ok/gonow",
   });
 });
 
