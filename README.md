@@ -6,7 +6,7 @@ Assign short aliases for your URLs.
 
 1. Clone this repo:
    ```bash
-   git clone https://github.com/nicobako/gonow.git
+   git clone https://github.com/se-ok/gonow
    ```
 2. Go to `chrome://extensions` (or `edge://extensions` for Edge)
 3. Enable **Developer mode**
