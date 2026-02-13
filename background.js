@@ -9,7 +9,7 @@ function getLinks() {
 // Show suggestions as user types in omnibox
 chrome.omnibox.onInputChanged.addListener(async (text, suggest) => {
   const links = await getLinks();
-  const input = text.trimStart();
+  const input = text.trim();
   const suggestions = [];
 
   for (const [keyword, urlTemplate] of Object.entries(links)) {
@@ -27,7 +27,7 @@ chrome.omnibox.onInputChanged.addListener(async (text, suggest) => {
 // Navigate when user selects a suggestion or presses Enter
 chrome.omnibox.onInputEntered.addListener(async (text, disposition) => {
   const links = await getLinks();
-  const input = text.trimStart();
+  const input = text.trim();
 
   // Split keyword from placeholder value at first '?'
   const qIndex = input.indexOf("?");

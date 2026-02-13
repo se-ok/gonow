@@ -17,7 +17,7 @@ Assign short aliases for your URLs.
 1. Click the extension icon ![icon](icons/icon16.png) and add a link, e.g. keyword `docs`, URL `https://docs.google.com`
 2. Type a backtick (`` ` ``) and Space in the address bar, then your keyword:
    ```
-   ` docs  →  opens https://docs.google.com
+   ` docs <Enter> →  opens https://docs.google.com
    ```
 
 ## Usage
